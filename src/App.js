@@ -7,6 +7,7 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavigationBar } from './components/NavigationBar';
+import { NavigationBar2 } from './components/NavigationBar2';
 
 //import other pages
 import { Home } from './Home';
@@ -17,7 +18,24 @@ import { Register } from './Register';
 import { Listings } from './Listings';
 import { NoMatch } from './NoMatch';
 
-function App() {
+function App(props) {
+  const isLoggedIn = props.isLoggedIn
+  if (isLoggedIn){
+    return (
+      <React.Fragment>
+        <Router>
+          <NavigationBar2 />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/listings" component={Listings} />
+            <Route path="/logout" component={Logout} />
+          </Switch>
+        </Router>
+      </React.Fragment>
+    );  
+  }
+
   return (
     <React.Fragment>
       <Router>
