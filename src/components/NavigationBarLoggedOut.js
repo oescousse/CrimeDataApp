@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -19,7 +19,7 @@ const Styles = styled.div`
     right: 25%;
   }
 `;
-export const NavigationBar2 = () => (
+export const NavigationBarLoggedOut = () => (
   <Styles>
     <Navbar expand="lg">
       <Navbar.Brand href="/">HomeAwayCrime</Navbar.Brand>
@@ -29,7 +29,8 @@ export const NavigationBar2 = () => (
           <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item> 
           <Nav.Item><Nav.Link href="/listings">Listings</Nav.Link></Nav.Item> 
           <Nav.Item><Nav.Link href="/about">About</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/logout">Logout</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/register">Register</Nav.Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
