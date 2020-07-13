@@ -12,10 +12,10 @@ import './RegisterForm.css'
           this.state = {
               'email': '',
               'password': '',
-              'password2': '',
+              'VerifyPassword': '',
               validate: {
                   emailState: '',
-                  password2State: '',
+                  VerifyPasswordState: '',
               },
           }
           this.handleChange = this.handleChange.bind(this);
@@ -32,12 +32,12 @@ import './RegisterForm.css'
         this.setState({ validate })
     }
 
-    validatePassword2(e) {
+    validateVerifyPassword(e) {
         const { validate, password } = this.state
         if (password === e.target.value) {
-            validate.password2State = 'has-success'
+            validate.VerifyPasswordState = 'has-success'
         } else {
-            validate.password2State = 'has-danger'
+            validate.VerifyPasswordState = 'has-danger'
         }
         this.setState({ validate })
     }
@@ -57,7 +57,7 @@ import './RegisterForm.css'
     }
 
     render() {
-        const { email, password, password2 } = this.state;
+        const { email, password, VerifyPassword } = this.state;
         return (
             <Container className="App">
                 <h2>Register</h2>
@@ -105,14 +105,14 @@ import './RegisterForm.css'
                         <Label for="examplePassword">Re-enter Password</Label>
                         <Input
                             type="password"
-                            name="password2"
-                            id="examplePassword2"
+                            name="VerifyPassword"
+                            id="exampleVerifyPassword"
                             placeholder="********"
-                            value={ password2 }
-                            valid={ this.state.validate.password2State === 'has-success' }
-                            invalid={ this.state.validate.password2State === 'has-danger' }
+                            value={ VerifyPassword }
+                            valid={ this.state.validate.VerifyPasswordState === 'has-success' }
+                            invalid={ this.state.validate.VerifyPasswordState === 'has-danger' }
                             onChange={ (e) => {
-                                this.validatePassword2(e)
+                                this.validateVerifyPassword(e)
                                 this.handleChange(e)
                                 }
                             }
