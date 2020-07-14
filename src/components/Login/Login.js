@@ -1,5 +1,6 @@
 import React from 'react';
-
-export const Login = (props) => (
-  <p>This is the login page</p>
+export function Login() {
+  return (
+    <div>This is the login page.</div>
   )
+}

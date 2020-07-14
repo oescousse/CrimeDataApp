@@ -1,4 +1,6 @@
 import React from 'react';
-export const About = () => (
-  <p>This is the about page.</p>
-)
+export function About() {
+  return (
+    <div>This is the about page.</div>
+  )
+}

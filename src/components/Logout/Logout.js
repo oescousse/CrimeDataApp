@@ -1,5 +1,6 @@
 import React from 'react';
-
-export const Logout = (props) => (
-    <p>This is the logout page.</p>
-)
+export function Logout() {
+  return (
+    <div>This is the logout page.</div>
+  )
+}
