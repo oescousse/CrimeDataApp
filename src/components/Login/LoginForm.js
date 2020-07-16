@@ -19,17 +19,6 @@ import './LoginForm.css'
           this.handleChange = this.handleChange.bind(this);
       }
 
-    validateEmail(e) {
-        const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        const { validate } = this.state
-        if (emailRex.test(e.target.value)) {
-            validate.emailState = 'has-success'
-        } else {
-            validate.emailState = 'has-danger'
-        }
-        this.setState({ validate })
-    }
-
     handleChange = async (event) => {
         const { target } = event;
         const value = target.type === 'checkbox' ? target.checked : target.value
@@ -59,20 +48,20 @@ import './LoginForm.css'
                             id="exampleEmail"
                             placeholder="myemail@email.com"
                             value={ email }
-                            valid={ this.state.validate.emailState === 'has-success' }
-                            invalid={ this.state.validate.emailState === 'has-danger' }
+                            // valid={ this.state.validate.emailState === 'has-success' }
+                            // invalid={ this.state.validate.emailState === 'has-danger' }
                             onChange={ (e) => {
-                                this.validateEmail(e)
+                                // this.validateEmail(e)
                                 this.handleChange(e)
                                 }
                             }
                         />
-                        <FormFeedback valid>
+                        {/* <FormFeedback valid>
                             Your email looks good.
                         </FormFeedback>
                         <FormFeedback>
                             Looks like there's something wrong with your email.
-                        </FormFeedback>
+                        </FormFeedback> */}
                         <FormText>Your username is probably your email.</FormText>
                     </FormGroup>
                 </Col>
