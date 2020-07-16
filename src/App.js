@@ -1,7 +1,7 @@
 //basic react app imports
 import React from 'react';
 import './App.css';
-import LoginForm from './components/Logout/LoginForm';
+import LoginForm from './components/Login/LoginForm';
 
 //navbar imports
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
