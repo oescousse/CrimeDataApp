@@ -3,9 +3,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import Styles from '../NavigationBarStyles';
 
 export class NavigationBarLoggedIn extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   render () {
     return (
     <Styles>
