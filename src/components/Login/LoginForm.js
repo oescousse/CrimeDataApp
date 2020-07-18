@@ -30,7 +30,6 @@ import './LoginForm.css'
     submitForm(e) {
         e.preventDefault();
         console.log(`Email: ${this.state.email}`)
-        // called when the submit button is clicked:
         // if credentials are valid
             // change state to logged in, load home page
         // else:
