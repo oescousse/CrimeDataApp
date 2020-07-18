@@ -12,16 +12,15 @@ import './LoginForm.css'
           this.state = {
               'email': '',
               'password': '',
-              validate: {
-                  emailState: '',
-              },
           }
       }
 
     handleChange = async (event) => {
+
+        // sets the state[event] to event.value
         const { target } = event;
         const value = target.value
-        const{ name } = target;
+        const { name } = target;
         await this.setState({
             [ name ]: value,
         });
@@ -30,11 +29,11 @@ import './LoginForm.css'
     submitForm(e) {
         e.preventDefault();
         console.log(`Email: ${ this.state.email }`)
-        
+        // called when the submit button is clicked:
         // if credentials are valid
-            //change state to logged in, load home page
+            // change state to logged in, load home page
         // else:
-            //supply response that log in attempt failed
+            // supply response that log in attempt failed
     }
 
     render() {
