@@ -13,22 +13,23 @@ import './LoginForm.css'
               'email': '',
               'password': '',
           }
+        this.handleChange = this.handleChange.bind(this);
       }
 
-    handleChange = async (event) => {
+    handleChange(event){
 
         // sets the state[event] to event.value
         const { target } = event;
         const value = target.value
         const { name } = target;
-        await this.setState({
+        this.setState({
             [ name ]: value,
         });
     }
 
     submitForm(e) {
         e.preventDefault();
-        console.log(`Email: ${ this.state.email }`)
+        console.log(`Email: ${this.state.email}`)
         // called when the submit button is clicked:
         // if credentials are valid
             // change state to logged in, load home page
@@ -68,7 +69,7 @@ import './LoginForm.css'
                         />
                     </FormGroup>
                 </Col>
-                <Button>Submit</Button>
+                <Button onClick={ (e) => this.submitForm(e)}>Submit</Button>
             </Form>
         </Container>
         );
