@@ -1,6 +1,7 @@
 import React from 'react';
+import LoginForm from './LoginForm';
 export function Login() {
   return (
-    <div>This is the login page.</div>
+    <div><LoginForm /></div>
   )
 }
