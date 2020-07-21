@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     Container, Col, Form,
     FormGroup, Label, Input,
-    Button, FormText, FormFeedback,
+    Button, FormFeedback,
   } from 'reactstrap';
 import './RegisterForm.css'
 
@@ -42,11 +42,11 @@ import './RegisterForm.css'
         this.setState({ validate })
     }
 
-    handleChange = async (event) => {
+    handleChange(event) {
         const { target } = event;
-        const value = target.type === 'checkbox' ? target.checked : target.value
+        const value = target.value
         const{ name } = target;
-        await this.setState({
+        this.setState({
             [ name ]: value,
         });
     }
@@ -54,6 +54,14 @@ import './RegisterForm.css'
     submitForm(e) {
         e.preventDefault();
         console.log(`Email: ${ this.state.email }`)
+        // if email is in proper form:
+            // if email already in database
+                // do not store info
+            // if passwords match
+                // store passwords
+            // show message that passwords dont match
+        // else 
+            //do nothing, a message stating the email is in the wrong form should already be showing
     }
 
     render() {
@@ -125,7 +133,7 @@ import './RegisterForm.css'
                         Looks like your passwords don't match.
                     </FormFeedback>
                 </Col>
-                <Button>Submit</Button>
+                <Button onClick={ (e) => this.submitForm(e)}>Submit</Button>
             </Form>
         </Container>
         );
