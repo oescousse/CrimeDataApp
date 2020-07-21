@@ -57,6 +57,7 @@ import './RegisterForm.css'
         // if email is in proper form:
             // if email already in database
                 // do not store info
+                // display message that an account already exists
             // elif passwords match
                 // store email/password correctly
             //else
