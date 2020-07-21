@@ -45,7 +45,7 @@ import './RegisterForm.css'
     handleChange(event) {
         const { target } = event;
         const value = target.value
-        const{ name } = target;
+        const { name } = target;
         this.setState({
             [ name ]: value,
         });
@@ -57,9 +57,10 @@ import './RegisterForm.css'
         // if email is in proper form:
             // if email already in database
                 // do not store info
-            // if passwords match
-                // store passwords
-            // show message that passwords dont match
+            // elif passwords match
+                // store email/password correctly
+            //else
+                // show message that passwords dont match
         // else 
             //do nothing, a message stating the email is in the wrong form should already be showing
     }
