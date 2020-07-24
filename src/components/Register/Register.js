@@ -1,5 +1,7 @@
 import React from 'react';
-
-export const Register = (props) => (
-  <p>This is the registration page.</p>
-)
+import RegisterForm from './RegisterForm';
+export function Register() {
+  return (
+    <div><RegisterForm /></div>
+  )
+}
