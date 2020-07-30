@@ -1,7 +1,7 @@
 import React from 'react';
-import Example from './ListingsTabs'
+import ListingsTabs from './ListingsTabs'
 export function Listings() {
   return (
-    <Example />
+    <ListingsTabs />
   )
 }
