@@ -15,6 +15,8 @@ import { Login } from './components/Login/Login';
 import { Logout } from './components/Logout/Logout';
 import { Register } from './components/Register/Register';
 import { Listings } from './components/Listings/Listings';
+import { LandingPage } from './components/LandingPage';
+
 
 function App(props) {
   const isLoggedIn = props.isLoggedIn
