@@ -6,7 +6,7 @@ import classnames from 'classnames';
     constructor(props){
       super(props);
       this.state = {
-        ActiveTab: '1',
+        ActiveTab: 'AirBnB',
       }
     }
 
@@ -16,8 +16,8 @@ import classnames from 'classnames';
           <Nav tabs>
             <NavItem>
               <NavLink
-                className={classnames({ active: this.state.ActiveTabctiveTab === '1' })}
-                onClick={() => this.setState({ ActiveTab: '1' })}
+                className={classnames({ active: this.state.ActiveTabctiveTab === 'AirBnB' })}
+                onClick={() => this.setState({ ActiveTab: 'AirBnB' })}
                 href="#"
               >
                 AirBnB Listings
@@ -25,8 +25,8 @@ import classnames from 'classnames';
             </NavItem>
             <NavItem>
               <NavLink
-                className={classnames({ active: this.state.ActiveTab === '2' })}
-                onClick={() => this.setState({ ActiveTab: '2' })}
+                className={classnames({ active: this.state.ActiveTab === 'Rental' })}
+                onClick={() => this.setState({ ActiveTab: 'Rental' })}
                 href="#"
               >
                 Rental Listings
@@ -34,14 +34,14 @@ import classnames from 'classnames';
             </NavItem>
           </Nav>
           <TabContent activeTab={this.state.ActiveTab}>
-            <TabPane tabId="1">
+            <TabPane tabId="AirBnB">
               <Row>
                 <Col sm="6">
                   <h4>AirBnB component will go here</h4>
                 </Col>
               </Row>
             </TabPane>
-            <TabPane tabId="2">
+            <TabPane tabId="Rental">
               <Row>
                 <Col sm="6">
                 <h4>Rental Component will go here</h4>
