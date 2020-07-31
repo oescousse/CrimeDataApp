@@ -28,6 +28,8 @@ function App(props) {
             <Route path="/about" component={About} />
             <Route path="/listings" component={Listings} />
             <Route path="/logout" component={Logout} />
+            <Route path="/landingpage" component={LandingPage} />
+
           </Switch>
         </Router>
       </React.Fragment>
@@ -44,6 +46,8 @@ function App(props) {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/listings" component={Listings} />
+          <Route path="/landingpage" component={LandingPage} />
+
         </Switch>
       </Router>
     </React.Fragment>
