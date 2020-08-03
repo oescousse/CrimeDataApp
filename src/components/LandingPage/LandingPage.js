@@ -1,22 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Body= ()=>{
+export function LandingPage() {
+    return 
+        <Header />
+        <Body />
+        <Card />
+}
+function Body() {
     return(
-        <div id="body">
-            <Header/>
-            <Card
-                className='section'
-                title='About Us'
-                description='We allow users to view the safety of a given home listing or rental in the
-                area of San Francisco. Simply enter the zip code of your desired area to receive a list of 
-                homes and rentals in the region.'
-            />
-        </div>
+            <div id="body">
+                <Header/>
+                <Card
+                    className='section'
+                    title='About Us'
+                    description='We allow users to view the safety of a given home listing or rental in the
+                    area of San Francisco. Simply enter the zip code of your desired area to receive a list of 
+                    homes and rentals in the region.'
+                />
+            </div>
     )
 }
 
-const Header = () =>{
+function Header() {
     return(
         <div className='header'>
             <span className='header-title'>
@@ -29,8 +35,7 @@ const Header = () =>{
         </div>
     );
 }
-
-const Card = (props) =>{
+function Card(props) {
     return(
         <div className={props.className} >
             <div className="small-div">
@@ -51,3 +56,4 @@ const Card = (props) =>{
     )
 }
 
+export default LandingPage;
