@@ -6,7 +6,7 @@ import {
   } from 'reactstrap';
 import './UserInput.css';
 
-class UserInput extends Component {
+export class UserInput extends Component {
     render() {
         return (
             <Container className="UserInput">
