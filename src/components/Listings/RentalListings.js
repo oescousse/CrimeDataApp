@@ -1,4 +1,18 @@
-// input group that takes in a zip code
-// go button
-// list group (empty or unrendered?)
-// go inserts ten listings, then show 'next 10' button
+import React, { Component } from 'react';
+import ListingsTable from "./ListingsTable";
+
+  export class RentalListings extends Component {
+    constructor(props){
+      super(props);
+    }
+
+    render() {
+        return (
+        <div>
+            <ListingsTable />
+        </div>
+      );
+    }
+  }
+
+export default RentalListings;

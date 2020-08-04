@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import { AirBnBListings } from "./AirBnBListings"
+import { RentalListings } from "./RentalListings"
 
   export class ListingsTabs extends Component {
     constructor(props){
@@ -37,14 +39,14 @@ import classnames from 'classnames';
             <TabPane tabId="AirBnB">
               <Row>
                 <Col sm="6">
-                  <h4>AirBnB component will go here</h4>
+                  <AirBnBListings />
                 </Col>
               </Row>
             </TabPane>
             <TabPane tabId="Rental">
               <Row>
                 <Col sm="6">
-                <h4>Rental Component will go here</h4>
+                <RentalListings />
                 </Col>
               </Row>
             </TabPane>
