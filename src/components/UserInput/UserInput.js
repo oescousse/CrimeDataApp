@@ -23,7 +23,7 @@ export class UserInput extends Component {
                             />
                         </FormGroup>
                     </Col>
-                    <Button outline color="blue">Search</Button>
+                    <Button color="secondary">Search</Button>
                 </Form>
             </Container>
         );
