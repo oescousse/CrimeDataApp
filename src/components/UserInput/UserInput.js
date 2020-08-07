@@ -19,7 +19,7 @@ export class UserInput extends Component {
                             type="text"
                             maxLength="5"
                             onInput={this.maxLengthCheck}
-                            name="text"
+                            name="ZipCode"
                             id="exampleNumber"
                             placeholder="00000"
                             />
