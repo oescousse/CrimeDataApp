@@ -6,6 +6,12 @@ import {
   } from 'reactstrap';
 import './UserInput.css';
 
+maxLengthCheck = (object) => {
+    if (object.target.value.length > object.target.maxLength) {
+        object.target.value = object.target.value.slice(0, object.target.maxLength)
+    }
+}
+
 export class UserInput extends Component {
     render() {
         return (
@@ -17,6 +23,8 @@ export class UserInput extends Component {
                             <Label>Zip Code:</Label>
                             <Input
                             type="number"
+                            maxLength="5"
+                            onInput={this.maxLengthCheck}
                             name="number"
                             id="exampleNumber"
                             placeholder="00000"
