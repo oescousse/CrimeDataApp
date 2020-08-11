@@ -15,6 +15,7 @@ import { Login } from './components/Login/Login';
 import { Logout } from './components/Logout/Logout';
 import { Register } from './components/Register/Register';
 import { Listings } from './components/Listings/Listings';
+import { UserInput } from './components/UserInput/UserInput';
 
 function App(props) {
   const isLoggedIn = props.isLoggedIn
@@ -28,6 +29,7 @@ function App(props) {
             <Route path="/about" component={About} />
             <Route path="/listings" component={Listings} />
             <Route path="/logout" component={Logout} />
+            <Route path="/userinput" component={UserInput} />
           </Switch>
         </Router>
       </React.Fragment>
@@ -44,6 +46,7 @@ function App(props) {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/listings" component={Listings} />
+          <Route path="/userinput" component={UserInput} />
         </Switch>
       </Router>
     </React.Fragment>
