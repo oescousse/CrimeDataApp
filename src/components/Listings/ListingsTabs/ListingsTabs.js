@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import { AirBnBListings } from "./AirBnBListings"
-import { RentalListings } from "./RentalListings"
+import AirBnBListings from "./AirBnBListings";
+import RentalListings from "./RentalListings";
 
   export class ListingsTabs extends Component {
     constructor(props){
