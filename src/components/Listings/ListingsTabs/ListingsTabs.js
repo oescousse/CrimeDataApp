@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Container, Form } from 'reactstrap';
 import classnames from 'classnames';
 import AirBnBListings from "./AirBnBListings";
 import RentalListings from "./RentalListings";
+import "./ListingsTabs.css";
 
-  export class ListingsTabs extends Component {
+  class Tabs extends Component {
     constructor(props){
       super(props);
       this.state = {
@@ -55,5 +56,21 @@ import RentalListings from "./RentalListings";
       );
     }
   }
+
+
+  export function ListingsTabs(){
+     
+
+    return (
+        <Container className="App">
+            <h2>Listings</h2>
+            <Form className="form">
+            <Col>
+              <Tabs />
+            </Col>
+          </Form>
+    </Container>
+    );
+}
 
 export default ListingsTabs;
