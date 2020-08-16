@@ -7,85 +7,85 @@ class ForSaleListings extends Component {
   render(){
     const data = [
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
       },
       {
-        address: '417 E 57th St',
+        address: '417 E 57th St, New York',
         neighborhood: 'Sutton Place',
         rating: "####",
         link: <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>
