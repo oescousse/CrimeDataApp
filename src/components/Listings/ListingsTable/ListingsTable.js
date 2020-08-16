@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTable, usePagination } from 'react-table'
+import "./Pagination.css"
 
 export function Table({columns, data}) {
   const {
@@ -26,7 +27,6 @@ export function Table({columns, data}) {
     usePagination
   )
 
-  // Render Data Table UI
   return (
     <>
        <table {...getTableProps()}>
@@ -53,10 +53,9 @@ export function Table({columns, data}) {
         </tbody>
       </table>  
 
-     Pagination
      <div className="pagination">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-          {'<<'}
+          {'First Page'}
         </button>{' '}
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>
           {'<'}
@@ -65,7 +64,7 @@ export function Table({columns, data}) {
           {'>'}
         </button>{' '}
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
+          {'Last Page'}
         </button>{' '}
         <span>
           Page{' '}
@@ -92,7 +91,7 @@ export function Table({columns, data}) {
         >
           {[5, 10, 25].map(pageSize => (
             <option key={pageSize} value={pageSize}>
-              Show {pageSize}
+              Show {pageSize} rows
             </option>
           ))}
         </select>

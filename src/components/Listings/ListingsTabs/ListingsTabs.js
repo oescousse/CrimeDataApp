@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Container, Form } from 'reactstrap';
 import classnames from 'classnames';
-import AirBnBListings from "./AirBnBListings";
+import ForSaleListings from "./ForSaleListings";
 import RentalListings from "./RentalListings";
 import "./ListingsTabs.css";
 
@@ -9,7 +9,7 @@ import "./ListingsTabs.css";
     constructor(props){
       super(props);
       this.state = {
-        ActiveTab: 'AirBnB',
+        ActiveTab: 'ForSale',
       }
     }
 
@@ -19,11 +19,11 @@ import "./ListingsTabs.css";
           <Nav tabs>
             <NavItem>
               <NavLink
-                className={classnames({ active: this.state.ActiveTabctiveTab === 'AirBnB' })}
-                onClick={() => this.setState({ ActiveTab: 'AirBnB' })}
+                className={classnames({ active: this.state.ActiveTabctiveTab === 'ForSale' })}
+                onClick={() => this.setState({ ActiveTab: 'ForSale' })}
                 href="#"
               >
-                AirBnB Listings
+                For Sale Listings
               </NavLink>
             </NavItem>
             <NavItem>
@@ -37,10 +37,10 @@ import "./ListingsTabs.css";
             </NavItem>
           </Nav>
           <TabContent activeTab={this.state.ActiveTab}>
-            <TabPane tabId="AirBnB">
+            <TabPane tabId="ForSale">
               <Row>
                 <Col sm="6">
-                  <AirBnBListings />
+                  <ForSaleListings />
                 </Col>
               </Row>
             </TabPane>

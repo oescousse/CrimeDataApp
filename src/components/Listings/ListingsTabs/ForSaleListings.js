@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table } from "../ListingsTable/ListingsTable";
 import Styles from "../ListingsTable/ListingsTableStyles";
 
-class RentalListings extends Component {
+class ForSaleListings extends Component {
 
   render(){
     const data = [
@@ -115,4 +115,4 @@ class RentalListings extends Component {
   }
 }
 
-export default RentalListings;
+export default ForSaleListings;

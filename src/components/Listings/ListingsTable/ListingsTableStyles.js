@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const Styles = styled.div `
+  
   table {
-    width: 100%;
+    width: 205%;
     border-spacing: 0;
     border: 1px solid black;
     tr {
