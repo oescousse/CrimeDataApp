@@ -11,42 +11,6 @@ var docClient = new AWS.DynamoDB.DocumentClient();
 
 var table = "CrimeData";
 
-/*
-var add = {
-    TableName: table,
-    Item:{
-        "hashKey": 0,
-        "rangeKey": "Destruction",
-        "IncidentCategory": "chaos",
-        "IncidentDescription": "Personal Crisis",
-        "IncidentSubcategory": "Existential",
-        "geoJSON": {"type":"POINT","coordinates":[-122.4561075,37.71823521]},
-        "geohash": 0
-    }
-}
-
-var get = {
-    TableName: table,
-    Key:{
-        "hashKey": 0,
-        "rangeKey": "Destruction"
-    }
-};
-
-var update = {
-    TableName: table,
-    Key: {
-        "hashKey": 0,
-        "rangeKey": "Destruction"
-    },
-    UpdateExpression: "set IncidentCategory = :i",
-    ExpressionAttributeValues:{
-        ":i":"mayhem"
-    },
-    ReturnValues:"UPDATED_NEW"
-};
-*/
-
 app.get('/', function(req, res, next) {
     console.log("Getting item")
     var hash = req.query.hashKey
