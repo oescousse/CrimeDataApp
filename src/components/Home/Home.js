@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import './Home.css'
+import UserInput from '../UserInput/UserInput'
 
 export function Home() {
   return (
@@ -13,7 +14,7 @@ export function Home() {
                     homes and rentals in the region</p>
         <hr className="my-2" />
         <p className="lead">
-          <Button color="primary">Learn More</Button>
+          <UserInput/>
         </p>
       </Jumbotron>
     </div>
