@@ -15,14 +15,13 @@ import { Login } from './components/Login/Login';
 import { Logout } from './components/Logout/Logout';
 import { Register } from './components/Register/Register';
 import { Listings } from './components/Listings/Listings';
-import { LandingPage } from './components/LandingPage';
 
 
 function App(props) {
   const isLoggedIn = props.isLoggedIn
   if (isLoggedIn){
     return (
-      <React.Fragment>
+      <div class = "container">
         <Router>
           <NavigationBarLoggedIn />
           <Switch>
@@ -30,16 +29,14 @@ function App(props) {
             <Route path="/about" component={About} />
             <Route path="/listings" component={Listings} />
             <Route path="/logout" component={Logout} />
-            <Route path="/landingpage" component={LandingPage} />
-
           </Switch>
         </Router>
-      </React.Fragment>
+        </div>
     );  
   }
 
   return (
-    <React.Fragment>
+    <div class = "container">
       <Router>
         <NavigationBarLoggedOut />
         <Switch>
@@ -48,11 +45,9 @@ function App(props) {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/listings" component={Listings} />
-          <Route path="/landingpage" component={LandingPage} />
-
         </Switch>
       </Router>
-    </React.Fragment>
+    </div>
   );
 }
 
