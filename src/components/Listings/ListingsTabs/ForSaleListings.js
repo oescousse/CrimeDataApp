@@ -6,7 +6,7 @@ class ForSaleListings extends Component {
 
   render(){
     return (
-      <div><DataTable /></div>
+      <div><DataTable listingType="forSale"/></div>
       )
   }
 }

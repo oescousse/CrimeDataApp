@@ -1,7 +1,7 @@
 import TableHead from '@material-ui/core/TableHead';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -15,16 +15,12 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import paginationStyles from "./PaginationStyle";
+import tableStyles from "./ListingsTableStyles";
 
-const useStyles1 = makeStyles((theme) => ({
-  root: {
-    flexShrink: 0,
-    marginLeft: theme.spacing(2.5),
-  },
-}));
 
 function TablePaginationActions(props) {
-  const classes = useStyles1();
+  const classes = paginationStyles();
   const theme = useTheme();
   const { count, page, rowsPerPage, onChangePage } = props;
 
@@ -81,28 +77,28 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-// function createData(name, calories, fat) {
-//   return { name, calories, fat };
-// }
 function createData(address, neighborhood, rating, link) {
   return { address, neighborhood, rating, link };
 }
 
 const rows = [
   createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
+  createData('417 E 57th St, New York', 'Sutton Place', "####", <a href="https://www.realtor.com/realestateandhomes-detail/417-E-57th-St_New-York_NY_10022_M93827-80821">realtor.com</a>),
 ]
 
-const useStyles2 = makeStyles({
-  table: {
-    minWidth: 500,
-  },
-  root: {
-    width: '208%'
-  }
-});
-
-export default function CustomPaginationActionsTable() {
-  const classes = useStyles2();
+export default function DataTable(props) {
+  const classes = tableStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 

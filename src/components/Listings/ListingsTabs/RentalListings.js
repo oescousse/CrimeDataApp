@@ -6,7 +6,7 @@ class RentalListings extends Component {
 
   render(){
     return (
-      <div><DataTable/></div>
+      <div><DataTable listingType="rental"/></div>
     )
   }
 }
