@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, Container, Form } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import ForSaleListings from "./ForSaleListings";
-import RentalListings from "./RentalListings";
+import ForSaleListings from "./ListingsType/ForSaleListings";
+import RentalListings from "./ListingsType/ForRentListings";
 import "./ListingsTabs.css";
 
-  class Tabs extends Component {
+  class ListingsTabs extends Component {
     constructor(props){
       super(props);
       this.state = {
@@ -28,11 +28,11 @@ import "./ListingsTabs.css";
             </NavItem>
             <NavItem>
               <NavLink
-                className={classnames({ active: this.state.ActiveTab === 'Rental' })}
-                onClick={() => this.setState({ ActiveTab: 'Rental' })}
+                className={classnames({ active: this.state.ActiveTab === 'ForRent' })}
+                onClick={() => this.setState({ ActiveTab: 'ForRent' })}
                 href="#"
               >
-                Rental Listings
+                For Rent Listings
               </NavLink>
             </NavItem>
           </Nav>
@@ -44,7 +44,7 @@ import "./ListingsTabs.css";
                 </Col>
               </Row>
             </TabPane>
-            <TabPane tabId="Rental">
+            <TabPane tabId="ForRent">
               <Row>
                 <Col sm="6">
                 <RentalListings />
@@ -56,21 +56,4 @@ import "./ListingsTabs.css";
       );
     }
   }
-
-
-  export function ListingsTabs(){
-     
-
-    return (
-        <Container className="App">
-            <h2>Listings</h2>
-            <Form className="form">
-            <Col>
-              <Tabs />
-            </Col>
-          </Form>
-    </Container>
-    );
-}
-
 export default ListingsTabs;

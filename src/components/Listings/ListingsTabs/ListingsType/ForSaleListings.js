@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import DataTable from "../ListingsTable/ListingsTable";
-// import Styles from "../ListingsTable/ListingsTableStyles";
+import DataTable from "../../ListingsTable/ListingsTable/ListingsTable";
 
 class ForSaleListings extends Component {
 
