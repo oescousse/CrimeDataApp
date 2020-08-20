@@ -9,8 +9,8 @@ import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import tableStyles from "./ListingsTableStyles";
 import TablePaginationActions from "../ListingsTablePagination/TablePaginationActions";
+import "./ListingsTableStyle.css";
 
 
 TablePaginationActions.propTypes = {
@@ -41,7 +41,6 @@ const rows = [
 ]
 
 export default function ListingsTable(props) {
-  const classes = tableStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -57,8 +56,8 @@ export default function ListingsTable(props) {
   };
 
   return (
-    <TableContainer className={classes.root} component={Paper}>
-      <Table className={classes.table} aria-label="custom pagination table">
+    <TableContainer className="root" component={Paper}>
+      <Table className="table" aria-label="custom pagination table">
       <TableHead>
            <TableRow>
              <TableCell>Address</TableCell>

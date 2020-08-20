@@ -4,13 +4,10 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
-import paginationStyles from "./PaginationStyle";
 import React from 'react';
 
 
-
 function TablePaginationActions(props) {
-    const classes = paginationStyles();
     const theme = useTheme();
     const { count, page, rowsPerPage, onChangePage } = props;
   
@@ -31,7 +28,7 @@ function TablePaginationActions(props) {
     };
   
     return (
-      <div className={classes.root}>
+      <div className="root">
         <IconButton
           onClick={handleFirstPageButtonClick}
           disabled={page === 0}
