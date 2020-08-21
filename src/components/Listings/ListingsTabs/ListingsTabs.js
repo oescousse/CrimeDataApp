@@ -39,14 +39,14 @@ import "./ListingsTabs.css";
           <TabContent activeTab={this.state.ActiveTab}>
             <TabPane tabId="ForSale">
               <Row>
-                <Col sm="6">
+                <Col >
                   <ForSaleListings />
                 </Col>
               </Row>
             </TabPane>
             <TabPane tabId="ForRent">
               <Row>
-                <Col sm="6">
+                <Col >
                 <RentalListings />
                 </Col>
               </Row>
