@@ -11,20 +11,19 @@ export class UserInput extends Component {
         return (
             <Container className="UserInput">
                 <Form className="form" inline>
-                    <Col>
+                    <Col ></Col>
                         <FormGroup>
-                            {/* <Label>Zip Code:</Label> */}
                             <Input
                             type="text"
                             maxLength="5"
                             onInput={this.maxLengthCheck}
-                            name="ZipCode"
-                            id="exampleNumber"
+                            name="zipCode"
+                            id="zipCode"
                             placeholder="Enter Zip Code"
                             />
                         </FormGroup>
-                    </Col>
-                    <Button color="secondary">Search</Button>
+                        <Button color="secondary">Search</Button>
+                        <Col ></Col>
                 </Form>
             </Container>
         );
