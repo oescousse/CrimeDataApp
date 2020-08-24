@@ -1,8 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+To start the application, in the backend folder, you can run: 
 
-In the project directory, you can run:
+### `node index.js`
+
+In the frontend folder, you can run:
 
 ### `npm start`
 
