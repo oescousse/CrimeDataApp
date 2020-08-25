@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     Container, Col, Form,
-    FormGroup, Label, Input,
+    FormGroup, Input,
     Button,
   } from 'reactstrap';
 import './UserInput.css';
@@ -10,22 +10,20 @@ export class UserInput extends Component {
     render() {
         return (
             <Container className="UserInput">
-                <h2>Search</h2>
-                <Form className="form">
-                    <Col>
+                <Form className="form" inline>
+                    <Col ></Col>
                         <FormGroup>
-                            <Label>Zip Code:</Label>
                             <Input
                             type="text"
                             maxLength="5"
                             onInput={this.maxLengthCheck}
-                            name="ZipCode"
-                            id="exampleNumber"
-                            placeholder="00000"
+                            name="zipCode"
+                            id="zipCode"
+                            placeholder="Enter Zip Code"
                             />
                         </FormGroup>
-                    </Col>
-                    <Button color="secondary">Search</Button>
+                        <Button color="secondary">Search</Button>
+                        <Col ></Col>
                 </Form>
             </Container>
         );
