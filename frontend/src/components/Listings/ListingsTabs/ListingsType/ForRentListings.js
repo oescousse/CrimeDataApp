@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DataTable from "../../ListingsTable/ListingsTable/ListingsTable";
 
-class ForRentListings extends Component {
+function ForRentListings() {
 
-  render(){
-    return (
-      <div><DataTable listingType="rental"/></div>
-    )
-  }
+  return (
+    <div><DataTable listingType="rental"/></div>
+  )
 }
 
 export default ForRentListings;
