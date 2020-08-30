@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 var AWS = require("aws-sdk");
+const bodyParser = require('body-parser');
+app.use(bodyParser.json({ extended: true }));
 
 AWS.config.update({
   region: "us-east-1",
@@ -10,7 +12,6 @@ AWS.config.update({
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 var table = "CrimeData";
-
 app.get('/', function(req, res, next) {
     console.log("Getting item")
     var hash = req.query.hashKey
@@ -29,7 +30,43 @@ app.get('/', function(req, res, next) {
             console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
         }
     })
-    res.send('successfully retrieved item');
+    res.send(JSON.stringify());
+});
+
+app.post('/radiusQuery', function(req, res, next){
+    var lat = req.body.lat;
+    var long = req.body.long;
+    const ddbGeo = require('dynamodb-geo');
+    const AWS = require('aws-sdk');
+    require('dotenv').config()
+
+    // Set up AWS
+    AWS.config.update({
+        accessKeyId: process.env.accessKeyId,
+        secretAccessKey: process.env.secretAccessKey,
+        region: 'us-east-1'
+    });
+
+    // Use a local DB for the example.
+    const ddb = new AWS.DynamoDB({ endpoint: new AWS.Endpoint('https://dynamodb.us-east-1.amazonaws.com') });
+
+    // Configuration for a new instance of a GeoDataManager. Each GeoDataManager instance represents a table
+    const config = new ddbGeo.GeoDataManagerConfiguration(ddb, 'CrimeData');
+
+    // Instantiate the table manager
+    const tableManager = new ddbGeo.GeoDataManager(config);
+
+    console.log('Querying by radius, looking 1mile from Cambridge, UK.');
+    tableManager.queryRadius({
+        RadiusInMeter: 1600.34,
+        CenterPoint: {
+            latitude: lat,
+            longitude: long
+        }
+    }).then(results => {
+        res.send(JSON.stringify(results));
+    })
+    .catch(console.warn)
 });
 
 app.post('/', function(req, res) {
@@ -112,3 +149,4 @@ app.delete('/', function(req, res) {
 app.listen(3000,()=> {
     console.log(`Example web server is listening on localhost:3000`)
 })
+
