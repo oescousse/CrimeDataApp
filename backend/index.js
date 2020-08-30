@@ -56,7 +56,7 @@ app.post('/radiusQuery', function(req, res, next){
     // Instantiate the table manager
     const tableManager = new ddbGeo.GeoDataManager(config);
 
-    console.log('Querying by radius, looking 1mile from Cambridge, UK.');
+    console.log('Querying by radius. 1 mile from ', lat, long);
     tableManager.queryRadius({
         RadiusInMeter: 1600.34,
         CenterPoint: {
@@ -64,9 +64,9 @@ app.post('/radiusQuery', function(req, res, next){
             longitude: long
         }
     }).then(results => {
-        res.send(JSON.stringify(results));
+        res.status(200).send(JSON.stringify(results));
     })
-    .catch(console.warn)
+    .catch(res.status(400))
 });
 
 app.post('/', function(req, res) {
