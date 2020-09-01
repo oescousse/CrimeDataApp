@@ -47,7 +47,7 @@ app.post('/radiusQuery', function(req, res, next){
         region: 'us-east-1'
     });
 
-    // Use a local DB for the example.
+    //connect to cloud db
     const ddb = new AWS.DynamoDB({ endpoint: new AWS.Endpoint('https://dynamodb.us-east-1.amazonaws.com') });
 
     // Configuration for a new instance of a GeoDataManager. Each GeoDataManager instance represents a table
