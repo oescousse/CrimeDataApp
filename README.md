@@ -1,7 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-To start the application, in the backend folder, you can run: 
+In order to start the backend, you must have a .env file in the backend folder with your AWS keys as follows:
+accessKeyId=YOUR_AWS_ACCESSKEY_ID
+secretAccessKey=YOUR_AWS_SECRET_ACCESSKEY
+
+you can then run the following command to start the backend
 
 ### `node index.js`
 
