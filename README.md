@@ -25,8 +25,20 @@ For example if I was working on an issue related to adding a method to an api th
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<<<<<<< HEAD
 ## Available Scripts (see project guidleines to ensure your application state is prepared for the given script)
 To start the application, in the backend folder, you can run: 
+=======
+## Available Scripts
+In order to start the backend, you must have a .env file in the backend folder with your AWS keys as follows:
+
+`accessKeyId=YOUR_AWS_ACCESSKEY_ID`
+
+`secretAccessKey=YOUR_AWS_SECRET_ACCESSKEY`
+
+
+You can then run the following command to start the backend
+>>>>>>> a774b6a7efbf674b7a6e4fc26f7298307c2e2abd
 
 ### `node index.js`
 
