@@ -13,9 +13,9 @@ export function Home() {
                     area of San Francisco. Simply enter the zip code of your desired area to receive a list of 
                     homes and rentals in the region</p>
         <hr className="my-2" />
-        <p className="lead">
-          <UserInput/>
-        </p>
+
+        <UserInput/>
+
       </Jumbotron>
     </div>
   );
