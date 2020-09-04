@@ -21,7 +21,7 @@ function App(props) {
   const isLoggedIn = props.isLoggedIn
   if (isLoggedIn){
     return (
-      <div class = "container">
+      <div className = "container">
         <Router>
           <NavigationBarLoggedIn />
           <Switch>
@@ -36,7 +36,7 @@ function App(props) {
   }
 
   return (
-    <div class = "container">
+    <div className = "container">
       <Router>
         <NavigationBarLoggedOut />
         <Switch>

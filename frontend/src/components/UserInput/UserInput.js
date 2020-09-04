@@ -1,30 +1,41 @@
 import React, { Component } from 'react';
 import {
-    Container, Col, Form,
-    FormGroup, Input,
-    Button,
-  } from 'reactstrap';
+    Container, Input,
+    Button, InputGroup, InputGroupAddon,Col
+} from 'reactstrap';
 import './UserInput.css';
 
 export class UserInput extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { isLoaded: false, zip: '', data: null };
+        this.callApi = this.callApi.bind(this);
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) { this.setState({ zip: event.target.value }); }
+
+    callApi() {
+        console.log(this.state)
+    }
     render() {
         return (
             <Container className="UserInput">
-                <Form className="form" inline>
-                    <Col ></Col>
-                        <FormGroup>
-                            <Input
-                            type="text"
-                            maxLength="5"
-                            onInput={this.maxLengthCheck}
-                            name="zipCode"
-                            id="zipCode"
-                            placeholder="Enter Zip Code"
-                            />
-                        </FormGroup>
-                        <Button color="secondary">Search</Button>
-                        <Col ></Col>
-                </Form>
+                <Col></Col>
+                <Col sm={{ size: 6, offset: 3 }}>
+                <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                        <Button color="info" onClick={this.callApi}>Search</Button>
+                    </InputGroupAddon>
+                    <Input type="text"
+                        value={this.state.zip}
+                        maxLength="5"
+                        placeholder="Zip Code"
+                        onChange={this.handleChange} />
+                </InputGroup>
+                </Col>
+                <Col></Col>
             </Container>
         );
     }
