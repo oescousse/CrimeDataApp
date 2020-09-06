@@ -33,6 +33,35 @@ app.get('/', function(req, res, next) {
     res.send(JSON.stringify());
 });
 
+app.get('/listingsQuery', function(req, res, next){
+
+    var postal_code = req.headers.postal_code;
+
+    var unirest = require("unirest");
+
+    var req = unirest("GET", "https://realtor.p.rapidapi.com/properties/v2/list-for-sale");
+    
+    req.query({
+        "sort": "relevance",
+        "limit": "200",
+        "offset": "0",
+        "postal_code": postal_code //94114 for testing
+
+    });
+    
+    req.headers({
+        "x-rapidapi-host": "realtor.p.rapidapi.com",
+        "x-rapidapi-key": "be8ed8dc23mshf10fecfd09dac6ap114951jsne2bd1b3b7515",
+        "useQueryString": true
+    });
+    
+    
+    req.end(function (res1) {
+        if (res1.error) res.status(400).send("bad request");
+        res.status(200).send(JSON.stringify(res1.body));
+    });
+});
+
 app.post('/radiusQuery', function(req, res, next){
     var lat = req.body.lat;
     var long = req.body.long;
