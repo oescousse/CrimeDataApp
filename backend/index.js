@@ -33,7 +33,7 @@ app.get('/', function(req, res, next) {
     res.send(JSON.stringify());
 });
 
-app.get('/listingsQuery', function(req, res, next){
+app.get('/listingsQuery', function(req, res){
 
     var postal_code = req.headers.postal_code;
 
@@ -62,7 +62,7 @@ app.get('/listingsQuery', function(req, res, next){
     });
 });
 
-app.post('/radiusQuery', function(req, res, next){
+app.post('/radiusQuery', function(req, res){
     var lat = req.body.lat;
     var long = req.body.long;
     const ddbGeo = require('dynamodb-geo');

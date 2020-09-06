@@ -17,7 +17,17 @@ export class UserInput extends Component {
     handleChange(event) { this.setState({ zip: event.target.value }); }
 
     callApi() {
-        console.log(this.state)
+            var unirest = require('unirest');
+            var req = unirest('GET', 'http://localhost:3000/listingsQuery');
+
+            req.headers({
+                'postal_code': this.state.zip
+            })
+            req.send("")
+            req.end(function (res) { 
+                if (res.error) throw new Error(res.error); 
+                console.log(res.raw_body);
+            });
     }
     render() {
         return (
