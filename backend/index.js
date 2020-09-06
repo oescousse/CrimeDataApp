@@ -57,8 +57,8 @@ app.get('/listingsQuery', function(req, res){
     
     
     req.end(function (res1) {
-        if (res1.error) res.status(400).send("bad request");
-        res.status(200).send(JSON.stringify(res1.body));
+        if (res1.error) res.status(400);
+        res.send(JSON.stringify(res1.body));
     });
 });
 
