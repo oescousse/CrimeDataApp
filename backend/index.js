@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const axios = require('axios');
+
 var AWS = require("aws-sdk");
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({ extended: true }));
@@ -23,6 +25,21 @@ app.get('/', function(req, res, next) {
             "rangeKey": String(range)
         },
     }
+    var query = req.query;
+    //Log the request parameters
+    console.log(req.params.zip)
+    let zip = req.params.zip;
+
+    axios.get('https://www.zipcodeapi.com/rest/info.json/' + zip)
+    .then(function (response) {
+        console.log(response.data);
+        res.status(200).json(response.data);
+    })
+    .catch(function (error) {
+        console.log(error)
+        res.status(400).json({error:"An error occurred"});
+    })
+
     docClient.get(g, function(err, data) {
         if (err) {
             console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
