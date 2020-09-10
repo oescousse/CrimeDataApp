@@ -17,18 +17,25 @@ export class UserInput extends Component {
     handleChange(event) { this.setState({ zip: event.target.value }); }
 
     callApi() {
-            var unirest = require('unirest');
-            var req = unirest('GET', 'http://localhost:3000/listingsQuery');
+            var myHeaders = new Headers();
+            myHeaders.append("postal_code", this.state.zip);
+            myHeaders.append("Content-Type", "application/json");
 
-            req.headers({
-                'postal_code': this.state.zip
-            })
-            req.send("")
-            req.end(function (res) { 
-                if (res.error) throw new Error(res.error); 
-                console.log(res.raw_body);
-            });
+            var raw = JSON.stringify({"postal_code":this.state.zip});
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("http://localhost:3000/listingsQuery", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
     }
+
     render() {
         return (
             <Container className="UserInput">

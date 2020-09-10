@@ -33,9 +33,9 @@ app.get('/', function(req, res, next) {
     res.send(JSON.stringify());
 });
 
-app.get('/listingsQuery', function(req, res){
+app.post('/listingsQuery', function(req, res){
 
-    var postal_code = req.headers.postal_code;
+    var postal_code = req.body.postal_code;
 
     var unirest = require("unirest");
 
@@ -51,14 +51,14 @@ app.get('/listingsQuery', function(req, res){
     
     req.headers({
         "x-rapidapi-host": "realtor.p.rapidapi.com",
-        "x-rapidapi-key": "",
+        "x-rapidapi-key": "7ef5b92b24mshd40be68071889bbp123f2cjsn0f27be929a49",
         "useQueryString": true
     });
     
     
-    req.end(function (res1) {
-        if (res1.error) res.status(400);
-        res.send(JSON.stringify(res1.body));
+    req.end(function (realtorRes) {
+        if (realtorRes.error) res.status(400);
+        res.send(JSON.stringify(realtorRes.body));
     });
 });
 
