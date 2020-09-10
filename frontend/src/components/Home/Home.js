@@ -2,6 +2,7 @@ import React from 'react';
 import { Jumbotron } from 'reactstrap';
 import './Home.css'
 import UserInput from '../UserInput/UserInput'
+import Crimes from '../Crimes/Crimes'
 
 export function Home() {
   return (
@@ -15,8 +16,8 @@ export function Home() {
         <hr className="my-2" />
 
         <UserInput/>
-
       </Jumbotron>
+      {/* <Crimes/> */}
     </div>
   );
 };
