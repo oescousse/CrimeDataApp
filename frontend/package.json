@@ -21,7 +21,6 @@
     "react-test-renderer": "^16.13.1",
     "reactstrap": "^8.5.1",
     "styled-components": "^4.4.1",
-    "unirest": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
