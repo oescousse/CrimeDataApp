@@ -31,7 +31,36 @@ app.post('/changeZip', function(req, res) {
     })
 });
 
-app.post('/radiusQuery', function(req, res, next){
+app.post('/listingsQuery', function(req, res){
+
+    var postal_code = req.body.postal_code;
+
+    var unirest = require("unirest");
+
+    var req = unirest("GET", "https://realtor.p.rapidapi.com/properties/v2/list-for-sale");
+    
+    req.query({
+        "sort": "relevance",
+        "limit": "200",
+        "offset": "0",
+        "postal_code": postal_code //94114 for testing
+
+    });
+    
+    req.headers({
+        "x-rapidapi-host": "realtor.p.rapidapi.com",
+        "x-rapidapi-key": "",
+        "useQueryString": true
+    });
+    
+    
+    req.end(function (realtorRes) {
+        if (realtorRes.error) res.status(400);
+        res.send(JSON.stringify(realtorRes.body));
+    });
+});
+
+app.post('/radiusQuery', function(req, res){
     var lat = req.body.lat;
     var long = req.body.long;
     const ddbGeo = require('dynamodb-geo');

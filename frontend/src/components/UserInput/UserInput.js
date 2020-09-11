@@ -15,7 +15,12 @@ constructor(props) {
     
     handleChange(event) { this.setState({ zip: event.target.value }); }
 
-    callApi() {
+    callApi(){
+        this.zipCodeApi();
+        this.listingsApi();
+    }
+
+    zipCodeApi() {
         let data = {zip:this.state.zip};
         fetch("/changeZip",{
             method: 'POST', 
@@ -30,8 +35,27 @@ constructor(props) {
                 console.log(data);
             })
             .catch(console.log)
+
     }
 
+    listingsApi(){
+        var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({"postal_code":this.state.zip});
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("/listingsQuery", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    }
 
     render() {
         return (
