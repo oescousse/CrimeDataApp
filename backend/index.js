@@ -14,21 +14,11 @@ AWS.config.update({
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 var table = "CrimeData";
-app.get('/', function(req, res, next) {
-    console.log("Getting item")
-    var hash = req.query.hashKey
-    var range = req.query.rangeKey
-    var g = {
-        TableName: table,
-        Key: {
-            "hashKey": Number(hash),
-            "rangeKey": String(range)
-        },
-    }
-   var query = req.query;
+app.post('/changeZip', function(req, res) {
+
     //Log the request parameters
-    console.log(req.params.zip)
-    let zip = req.params.zip;
+    console.log(req.body)
+    let zip = req.body.zip;
 
     axios.get('https://www.zipcodeapi.com/rest/info.json/' + zip)
     .then(function (response) {
@@ -39,14 +29,6 @@ app.get('/', function(req, res, next) {
         console.log(error)
         res.status(400).json({error:"An error occurred"});
     })
-    docClient.get(g, function(err, data) {
-        if (err) {
-            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-        }
-    })
-    res.send(JSON.stringify());
 });
 
 app.post('/radiusQuery', function(req, res, next){
@@ -162,7 +144,7 @@ app.delete('/', function(req, res) {
 });
 
 
-app.listen(3000,()=> {
+app.listen(3001,()=> {
     console.log(`Example web server is listening on localhost:3000`)
 })
 

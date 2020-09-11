@@ -16,8 +16,14 @@ constructor(props) {
     handleChange(event) { this.setState({ zip: event.target.value }); }
 
     callApi() {
-
-        fetch("https://www.zipcodeapi.com/rest/info.json/" + this.state.zip)
+        let data = {zip:this.state.zip};
+        fetch("/changeZip",{
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          })
             .then(res => res.json())
             .then(data => {
                 this.setState({ lat: data.lat, lng: data.lng })
