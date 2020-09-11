@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const axios = require('axios');
+
 var AWS = require("aws-sdk");
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({ extended: true }));
@@ -12,25 +14,21 @@ AWS.config.update({
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 var table = "CrimeData";
-app.get('/', function(req, res, next) {
-    console.log("Getting item")
-    var hash = req.query.hashKey
-    var range = req.query.rangeKey
-    var g = {
-        TableName: table,
-        Key: {
-            "hashKey": Number(hash),
-            "rangeKey": String(range)
-        },
-    }
-    docClient.get(g, function(err, data) {
-        if (err) {
-            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-        }
+app.post('/changeZip', function(req, res) {
+
+    //Log the request parameters
+    console.log(req.body)
+    let zip = req.body.zip;
+
+    axios.get('https://www.zipcodeapi.com/rest/info.json/' + zip)
+    .then(function (response) {
+        console.log(response.data);
+        res.status(200).json(response.data);
     })
-    res.send(JSON.stringify());
+    .catch(function (error) {
+        console.log(error)
+        res.status(400).json({error:"An error occurred"});
+    })
 });
 
 app.post('/listingsQuery', function(req, res){
@@ -175,7 +173,7 @@ app.delete('/', function(req, res) {
 });
 
 
-app.listen(3000,()=> {
+app.listen(3001,()=> {
     console.log(`Example web server is listening on localhost:3000`)
 })
 

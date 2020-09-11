@@ -22,6 +22,7 @@
   "homepage": "https://github.com/csjoblinksreddit/airbnbcrimedata#readme",
   "dependencies": {
     "aws-sdk": "^2.738.0",
+    "axios": "^0.20.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "dynamodb-geo": "^0.4.0",
