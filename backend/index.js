@@ -1,25 +1,64 @@
 const express = require('express');
 const app = express();
-var AWS = require("aws-sdk");
+const axios = require('axios');
+const ddbGeo = require('dynamodb-geo');
+const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
-app.use(bodyParser.json({ extended: true }));
 
-AWS.config.update({
-  region: "us-east-1",
-  //endpoint: "http://localhost:3000"
+app.use(bodyParser.json({ extended: true }));
+require('dotenv').config()
+
+
+
+app.post('/changeZip', function(req, res) {
+
+    //Log the request parameters
+    console.log(req.body)
+    let zip = req.body.postal_code;
+
+    axios.get('https://www.zipcodeapi.com/rest/info.json/' + zip)
+    .then(function (response) {
+        console.log(response.data);
+        res.status(200).json(response.data);
+    })
+    .catch(function (error) {
+        console.log(error)
+        res.status(400).json({error:"An error occurred"});
+    })
 });
 
-var docClient = new AWS.DynamoDB.DocumentClient();
+app.post('/listingsQuery', function(req, res){
 
-var table = "CrimeData";
+    var postal_code = req.body.postal_code;
 
-app.post('/radiusQuery', function(req, res, next){
+    var unirest = require("unirest");
+
+    var req = unirest("GET", "https://realtor.p.rapidapi.com/properties/v2/list-for-sale");
+    
+    req.query({
+        "sort": "relevance",
+        "limit": "200",
+        "offset": "0",
+        "postal_code": postal_code //94114 for testing
+
+    });
+    
+    req.headers({
+        "x-rapidapi-host": "realtor.p.rapidapi.com",
+        "x-rapidapi-key": "",
+        "useQueryString": true
+    });
+    
+    
+    req.end(function (realtorRes) {
+        if (realtorRes.error) res.status(400);
+        res.send(JSON.stringify(realtorRes.body));
+    });
+});
+
+app.post('/radiusQuery', function(req, res){
     var lat = parseFloat(req.body.lat);
     var long = parseFloat(req.body.long);
-    const ddbGeo = require('dynamodb-geo');
-    const AWS = require('aws-sdk');
-    require('dotenv').config()
-
     // Set up AWS
     AWS.config.update({
         accessKeyId: process.env.accessKeyId,
