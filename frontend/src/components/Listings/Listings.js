@@ -1,13 +1,14 @@
 import React from 'react';
 import { Col, Container, Form } from 'reactstrap';
 import ListingsTabs from "./ListingsTabs/ListingsTabs"
-export function Listings() {
+
+export default function Listings(props) {
   return (
-    <Container className="App">
+    <Container className="">
         <h2>Listings</h2>
         <Form className="form">
         <Col>
-          <ListingsTabs />
+          <ListingsTabs postal_code={props.postal_code}/>
         </Col>
       </Form>
     </Container>

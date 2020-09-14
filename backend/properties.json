@@ -1,0 +1,148 @@
+{
+    "meta": {
+        "build": "3.23.118",
+        "schema": "core.3",
+        "tracking_params": {
+            "channel": "for_sale",
+            "siteSection": "for_sale",
+            "city": "unknown",
+            "county": "unknown",
+            "neighborhood": "unknown",
+            "searchCityState": "unknown",
+            "state": "unknown",
+            "zip": "78704",
+            "srpPropertyStatus": "srp:for_sale",
+            "listingActivity": "unknown",
+            "propertyStatus": "for_sale",
+            "propertyType": "any",
+            "searchBathrooms": "any",
+            "searchBedrooms": "any",
+            "searchMaxPrice": "unknown",
+            "searchMinPrice": "unknown",
+            "searchRadius": "unknown",
+            "searchHouseSqft": "any",
+            "searchLotSqft": "any",
+            "searchResults": "200",
+            "sortResults": "relevance",
+            "searchCoordinates": "unknown",
+            "version": "1.0"
+        },
+        "tracking": "type|meta|data|resource_type|property_list|query|client_id|rdc_mobile_native,13.3.0.53|prop_status|for_sale|schema|core.3|limit|offset|postal_code|78704|sort|relevance|count|total^5K|0|5K|BP^^$0|1|2|$3|4|5|$6|7|8|9|A|B|C|K|D|L|E|F|G|H]|8|9|I|M|J|N]]",
+        "returned_rows": 200,
+        "matching_rows": 421
+    },
+    "properties": [
+        {
+            "property_id": "M9443029475",
+            "listing_id": "2921243623",
+            "rdc_web_url": "https://www.realtor.com/realestateandhomes-detail/900-S-1st-St_Austin_TX_78704_M94430-29475",
+            "prop_type": "condo",
+            "address": {
+                "city": "Austin",
+                "line": "900 S 1st St",
+                "postal_code": "78704",
+                "state_code": "TX",
+                "state": "Texas",
+                "county": "Travis",
+                "fips_code": "48453",
+                "lat": 30.254577,
+                "lon": -97.752395,
+                "neighborhood_name": "Bouldin Creek"
+            },
+            "branding": {
+                "listing_office": {
+                    "list_item": {
+                        "name": null,
+                        "photo": null,
+                        "phone": null,
+                        "slogan": null,
+                        "show_realtor_logo": false,
+                        "link": null,
+                        "accent_color": null
+                    }
+                }
+            },
+            "prop_status": "for_sale",
+            "price": 815000,
+            "baths_full": 2,
+            "baths": 2,
+            "beds": 2,
+            "building_size": {
+                "size": 1562,
+                "units": "sqft"
+            },
+            "agents": [
+                {
+                    "primary": true
+                }
+            ],
+            "office": {
+                "id": "4d0c1f552276cbcb2b27a98da6be486e"
+            },
+            "last_update": "2020-09-11T22:01:51Z",
+            "client_display_flags": {
+                "presentation_status": "for_sale",
+                "is_showcase": true,
+                "lead_form_phone_required": true,
+                "price_change": 0,
+                "is_co_broke_email": false,
+                "has_open_house": false,
+                "is_co_broke_phone": false,
+                "is_new_listing": true,
+                "is_new_plan": false,
+                "is_new_construction": true,
+                "is_turbo": false,
+                "is_office_standard_listing": false,
+                "suppress_map_pin": false,
+                "show_contact_a_lender_in_lead_form": true,
+                "show_veterans_united_in_lead_form": true,
+                "is_showcase_choice_enabled": false
+            },
+            "lead_forms": {
+                "form": {
+                    "name": {
+                        "required": true,
+                        "minimum_character_count": 1
+                    },
+                    "email": {
+                        "required": true,
+                        "minimum_character_count": 5
+                    },
+                    "phone": {
+                        "required": true,
+                        "minimum_character_count": 10,
+                        "maximum_character_count": 11
+                    },
+                    "message": {
+                        "required": false,
+                        "minimum_character_count": 0
+                    },
+                    "show": true
+                },
+                "show_agent": false,
+                "show_broker": false,
+                "show_builder": false,
+                "show_contact_a_lender": true,
+                "show_veterans_united": true,
+                "form_type": "classic",
+                "lead_type": "showcase",
+                "is_lcm_enabled": false,
+                "flip_the_market_enabled": false,
+                "show_text_leads": true,
+                "cashback_enabled": false
+            },
+            "photo_count": 7,
+            "thumbnail": "https://an.rdcpix.com/d2d58f96f32fbecd23839a5cb56fae11l-f1719532585x.jpg",
+            "page_no": 1,
+            "rank": 1,
+            "list_tracking": "type|property|data|prop_id|9443029475|list_id|2921243623|page|rank|list_branding|listing_agent|listing_office|property_status|product_code|advantage_code^1|1|0|0|35T|9VK|0^^$0|1|2|$3|4|5|6|7|F|8|G|9|$A|H|B|I]|C|J|D|K|E|L]]",
+            "mls": {
+                "name": "BDX",
+                "id": "1546098",
+                "plan_id": 417000409842,
+                "abbreviation": "BDXF",
+                "type": "new_home"
+            }
+        }
+    ]
+}
