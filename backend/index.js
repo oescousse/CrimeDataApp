@@ -1,24 +1,21 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-
-var AWS = require("aws-sdk");
+const ddbGeo = require('dynamodb-geo');
+const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
+const properties = require('./properties.json');
+const crimes = require('./crimes.json')
 app.use(bodyParser.json({ extended: true }));
+require('dotenv').config()
 
-AWS.config.update({
-  region: "us-east-1",
-  //endpoint: "http://localhost:3000"
-});
 
-var docClient = new AWS.DynamoDB.DocumentClient();
 
-var table = "CrimeData";
 app.post('/changeZip', function(req, res) {
 
     //Log the request parameters
     console.log(req.body)
-    let zip = req.body.zip;
+    let zip = req.body.postal_code;
 
     axios.get('https://www.zipcodeapi.com/rest/info.json/' + zip)
     .then(function (response) {
@@ -61,12 +58,8 @@ app.post('/listingsQuery', function(req, res){
 });
 
 app.post('/radiusQuery', function(req, res){
-    var lat = req.body.lat;
-    var long = req.body.long;
-    const ddbGeo = require('dynamodb-geo');
-    const AWS = require('aws-sdk');
-    require('dotenv').config()
-
+    var lat = parseFloat(req.body.lat);
+    var lng = parseFloat(req.body.lng);
     // Set up AWS
     AWS.config.update({
         accessKeyId: process.env.accessKeyId,
@@ -83,12 +76,12 @@ app.post('/radiusQuery', function(req, res){
     // Instantiate the table manager
     const tableManager = new ddbGeo.GeoDataManager(config);
 
-    console.log('Querying by radius. 1 mile from ', lat, long);
+    console.log('Querying by radius. 1 mile from ', lat, lng);
     tableManager.queryRadius({
         RadiusInMeter: 1600.34,
         CenterPoint: {
             latitude: lat,
-            longitude: long
+            longitude: lng
         }
     }).then(results => {
         res.status(200).send(JSON.stringify(results));
@@ -96,84 +89,7 @@ app.post('/radiusQuery', function(req, res){
     .catch(res.status(400))
 });
 
-app.post('/', function(req, res) {
-    var p = {
-        TableName: table,
-        Item: {
-            "hashKey": Number(req.query.hashKey),
-            "rangeKey": String(req.query.rangeKey),
-            "IncidentCategory": String(req.query.IncidentCategory),
-            "IncidentDescription": String(req.query.IncidentDescription),
-            "IncidentSubcategory": String(req.query.IncidentSubcategory),
-            //"geoJSON": {"type":"POINT","coordinates":[Number(req.query.geoJSON)]},
-            "geohash": Number(req.query.geohash)
-        }
-    }
-    docClient.put(p, function(err, data) {
-        if (err) {
-            console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("Added item:", JSON.stringify(data, null, 2));
-        }
-    })
-    res.send('successfully added item');
-});
-
-
-
-app.put('/', function(req, res) {
-    console.log("Updating the item...");
-    var u = {
-        TableName: table,
-        Key: {
-            "hashKey": Number(req.query.hashKey),
-            "rangeKey": String(req.query.rangeKey)
-        },
-        UpdateExpression: "set IncidentCategory = :c, IncidentDescription=:d, IncidentSubcategory=:s, geoJSON=:j, geohash=:g",
-        ExpressionAttributeValues:{
-        ":i":String(req.query.IncidentCategory),
-        ":c":String(req.query.IncidentCategory),
-        ":d":String(req.query.IncidentDescription),
-        ":s":String(req.query.IncidentSubcategory),
-        ":j":String(req.query.geoJSON),
-        ":g":Number(req.query.geohash)
-
-    },
-        ReturnValues:"UPDATED_NEW"
-    }
-    docClient.update(u, function(err, data) {
-        if (err) {
-            console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
-        }
-    })
-    res.send('successfully updated item');
-});
-
-app.delete('/', function(req, res) {
-    console.log("Attempting a delete");
-    var hash = req.query.hashKey
-    var range = req.query.rangeKey
-    var d = {
-        TableName: table,
-        Key: {
-            "hashKey": Number(hash),
-            "rangeKey": String(range)
-        },
-    }
-    docClient.delete(d, function(err, data) {
-        if (err) {
-            console.error("Unable to delete item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            console.log("DeleteItem succeeded:", JSON.stringify(data, null, 2));
-        }
-    })
-    res.send('successfully deleted item');
-});
-
-
 app.listen(3001,()=> {
-    console.log(`Example web server is listening on localhost:3000`)
+    console.log(`Example web server is listening on localhost:3001`)
 })
 

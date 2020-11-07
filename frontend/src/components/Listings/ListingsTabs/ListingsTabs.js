@@ -40,7 +40,7 @@ import "./ListingsTabs.css";
             <TabPane tabId="ForSale">
               <Row>
                 <Col >
-                  <ForSaleListings />
+                  <ForSaleListings postal_code={this.props.postal_code} />
                 </Col>
               </Row>
             </TabPane>

@@ -14,7 +14,7 @@ import { About } from './components/About/About';
 import { Login } from './components/Login/Login';
 import { Logout } from './components/Logout/Logout';
 import { Register } from './components/Register/Register';
-import { Listings } from './components/Listings/Listings';
+import  Listings  from './components/Listings/Listings';
 
 
 function App(props) {
