@@ -3,15 +3,77 @@
 [![Pull Requests][pr-shield]][pr-url]
 [![MIT License][license-shield]][license-url]
 
-## Project Guidelines
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+
+  <h2 align="center">Listing Crime Rate</h2>
+
+  <p align="center">
+    A way to get a crime score for house listings around the SF area
+    <br />
+    <br />
+    <a href="https://github.com/csjoblinksreddit/Listings-Crime-Rate/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/csjoblinksreddit/Listings-Crime-Rate/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+
+### Problem
+
+People are uninformed about crimes when buying or renting a home.
+
+### Solution
+
+Our solution shows people crimes that have happened within a radius of a provided zip code. Thus making the renter or buyer more informed.
+
+
+
+## Getting Started
+
+To get started with our application:
+
+- Clone the repository
+- Install the dependecies in the backend and frontend folders
+- The front end and backend must be started seperately
+
+### Running the frontend
+- In the frontend folder
+    - run npm start
 
 ### Running the backend
 
-1. in order to run the backend you must have a .env file in your backend folder that contains your aws keys as follows:
+Our application uses AWS DynamoDB to house our crime data. As of 11/08/2020 we have deleted our DynamoDB instance. If you would like to create your own DynamoDB instance with the data, create an issue against this repo.
+
+In order to use the backend correctly you must do the following
+- Create and AWS account and get an Access Key and Secret Key
+- Create a Rapid API account and subscribe to the realtor.p.rapidapi.com API
+- Create a .env file in the backend folder
+- In the .env file add your keys as follows:
 
 `accessKeyId=YOUR_AWS_ACCESSKEY_ID`
-
 `secretAccessKey=YOUR_AWS_SECRET_ACCESSKEY`
+`x-rapidapi-key=YOUR_RAPID_API_ACCESSKEY`
 
 ### Pull request guidelines
 
@@ -120,11 +182,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 [issues-url]: https://github.com/csjoblinksreddit/Listings-Crime-Rate/pulls
 
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
+[license-shield]: https://img.shields.io/github/license/csjoblinksreddit/Listings-Crime-Rate?style=for-the-badge
 
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-url]: https://github.com/csjoblinksreddit/Listings-Crime-Rate/blob/master/License.txt
 
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 
-[linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
