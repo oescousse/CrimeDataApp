@@ -1,9 +1,7 @@
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+[![Last Commit][last-commit]][commit-url]
+[![Pull Requests][pr-shield]][pr-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 ## Project Guidelines
 
@@ -102,3 +100,31 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/csjoblinksreddit/Listings-Crime-Rate?style=for-the-badge
+
+[contributors-url]: https://github.com/csjoblinksreddit/Listings-Crime-Rate/graphs/contributors
+
+
+[last-commit]: https://img.shields.io/github/last-commit/csjoblinksreddit/Listings-Crime-Rate?style=for-the-badge
+
+[commit-url]: https://github.com/csjoblinksreddit/Listings-Crime-Rate/commits/master
+
+
+[pr-shield]: https://img.shields.io/github/issues-pr-closed/csjoblinksreddit/Listings-Crime-Rate?style=for-the-badge
+
+[pr-url]: https://github.com/csjoblinksreddit/Listings-Crime-Rate/pulls
+
+
+[issues-url]: https://github.com/csjoblinksreddit/Listings-Crime-Rate/pulls
+
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
+
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: images/screenshot.png
