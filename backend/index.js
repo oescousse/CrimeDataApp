@@ -46,7 +46,7 @@ app.post('/listingsQuery', function(req, res){
     
     req.headers({
         "x-rapidapi-host": "realtor.p.rapidapi.com",
-        "x-rapidapi-key": "",
+        "x-rapidapi-key": process.env.rapidapi_key,
         "useQueryString": true
     });
     
