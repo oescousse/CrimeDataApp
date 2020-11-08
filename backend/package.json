@@ -1,0 +1,33 @@
+{
+  "name": "crimedatabackend",
+  "version": "1.0.0",
+  "description": "allows user to get, post, put and delete items from database of crime data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csjoblinksreddit/airbnbcrimedata.git"
+  },
+  "keywords": [
+    "express",
+    "node.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csjoblinksreddit/airbnbcrimedata/issues"
+  },
+  "homepage": "https://github.com/csjoblinksreddit/airbnbcrimedata#readme",
+  "dependencies": {
+    "aws-sdk": "^2.738.0",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "dynamodb-geo": "^0.4.0",
+    "express": "^4.17.1",
+    "unirest": "^0.6.0",
+    "uuid": "^3.0.1"
+  }
+}

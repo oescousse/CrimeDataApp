@@ -1,0 +1,9 @@
+.alltext{
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url("https://cdn.pixabay.com/photo/2019/12/05/05/50/san-francisco-4674351_1280.jpg");
+    background-size: cover;
+    padding-bottom: 9rem;
+  }

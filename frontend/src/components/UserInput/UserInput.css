@@ -1,0 +1,10 @@
+.UserInput {
+    text-align: left;
+    padding: 2em 1em 2em 1em;
+    margin-top: 100px;
+    max-width: 40em;
+    background-color: white;
+  }
+  #zipCode{
+    margin-right: 14px;
+  }

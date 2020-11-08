@@ -1,8 +1,36 @@
+## Project Guidelines
+
+### Running the backend
+
+1. in order to run the backend you must have a .env file in your backend folder that contains your aws keys as follows:
+
+`accessKeyId=YOUR_AWS_ACCESSKEY_ID`
+
+`secretAccessKey=YOUR_AWS_SECRET_ACCESSKEY`
+
+### Pull request guidelines
+
+1. When creating a pull request make sure that it is titled in the following way
+
+**[Issue Number] Description of pull request**
+
+For example if I was working on an issue related to adding a method to an api that had a ticket number 287 on Jira my pull request title would be
+
+**[287] Added the updateDB method to methods.js**
+
+
+2. **Never** merge your own pull request. This is bad practice to do so and could lead to issues in the code down the line
+
+3. Evey pull request must have at least one code review done before being merged
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Scripts (see project guidleines to ensure your application state is prepared for the given script)
+To start the application, in the backend folder, you can run: 
 
-In the project directory, you can run:
+### `node index.js`
+
+In the frontend folder, you can run:
 
 ### `npm start`
 
@@ -67,6 +95,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
+<<<<<<< HEAD
 
 ## Project Guidelines
 
@@ -84,3 +113,5 @@ For example if I was working on an issue related to adding a method to an api th
 2. **Never** merge your own pull request. This is bad practice to do so and could lead to issues in the code down the line
 
 3. Evey pull request must have at least one code review done before being merged
+=======
+>>>>>>> master
