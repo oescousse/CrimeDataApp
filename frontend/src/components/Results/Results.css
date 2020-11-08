@@ -1,0 +1,15 @@
+
+.bad{
+    color: red;
+}
+
+.ok{
+    color:yellow;
+}
+.good{
+    color: green;
+}
+
+.center{
+    text-align: center;
+}

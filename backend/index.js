@@ -4,7 +4,8 @@ const axios = require('axios');
 const ddbGeo = require('dynamodb-geo');
 const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
-
+const properties = require('./properties.json');
+const crimes = require('./crimes.json')
 app.use(bodyParser.json({ extended: true }));
 require('dotenv').config()
 
@@ -58,7 +59,7 @@ app.post('/listingsQuery', function(req, res){
 
 app.post('/radiusQuery', function(req, res){
     var lat = parseFloat(req.body.lat);
-    var long = parseFloat(req.body.long);
+    var lng = parseFloat(req.body.lng);
     // Set up AWS
     AWS.config.update({
         accessKeyId: process.env.accessKeyId,
@@ -75,12 +76,12 @@ app.post('/radiusQuery', function(req, res){
     // Instantiate the table manager
     const tableManager = new ddbGeo.GeoDataManager(config);
 
-    console.log('Querying by radius. 1 mile from ', lat, long);
+    console.log('Querying by radius. 1 mile from ', lat, lng);
     tableManager.queryRadius({
         RadiusInMeter: 1600.34,
         CenterPoint: {
             latitude: lat,
-            longitude: long
+            longitude: lng
         }
     }).then(results => {
         res.status(200).send(JSON.stringify(results));
