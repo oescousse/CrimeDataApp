@@ -22,6 +22,6 @@
   "homepage": "https://github.com/csjoblinksreddit/airbnbcrimedata#readme",
   "dependencies": {
     "aws-sdk": "^2.738.0",
-    "express": "^4.17.1"
+    "express": "^4.18.2"
   }
 }
